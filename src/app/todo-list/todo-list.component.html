@@ -1,0 +1,11 @@
+<h1>Todo List</h1>
+<input type="text" #title />
+<button (click)="addTodo(title)">Add</button>
+<ul>
+  <li *ngFor="let todo of toDos">
+    <span (click)="toggleTodo(todo)" [class.completed]="todo.isCompleted">{{
+      todo.title
+    }}</span>
+    <button (click)="removeTodo(todo)">Remove</button>
+  </li>
+</ul>
